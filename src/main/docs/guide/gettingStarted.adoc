@@ -1,0 +1,4 @@
+In this guide you are going to deploy a Grails 3 application to AWS Elastic Beanstalk.
+
+NOTE: Creating an AWS account requires a credit card. You can create a free account
+https://aws.amazon.com/[here] but a credit card is still required for verification.
