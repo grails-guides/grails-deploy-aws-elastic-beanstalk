@@ -1,1 +1,1 @@
-AWS
+AWS can take either zip files or WAR files. In our case we will go with a war.
