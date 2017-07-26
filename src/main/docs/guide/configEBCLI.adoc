@@ -1,0 +1,2 @@
+Now that EB CLI is installed we need to configure it and our project in order to receive the
+benefits of being able to not leave the command line.

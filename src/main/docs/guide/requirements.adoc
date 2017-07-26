@@ -1,1 +1,4 @@
 include::{commondir}/common-requirements.adoc[]
+
+Additionally considering we are working with a giant beanstalk in the clouds having
+a sharp axe near by may or may not be recommended.

@@ -1,0 +1,53 @@
+Now that we have a war file ready to deploy lets return to climbing that beanstalk!
+
+First click on the `Get started` button on the Elastic Beanstalk home page.
+
+image::EBHomeGetStarted.png[]
+
+This will bring us to the 'Create a web app' page
+
+image::createEBApp.png[]
+
+Now we will fill in the details of our app. Set the Application Name to a name of your choice (in our case MyApp) then set
+the Environment name, again whatever you would like is fine (we used Example). Next set your domain, you can allow it to
+use fully generated names but for simplicity we used My-App.
+
+NOTE: Make sure to `Check availability` for the domain you wish to use.
+
+Following setting the domain select Tomcat as your `Platform`.
+
+image::createEBAppDetails.png[]
+
+Once you have all the basic configuration set up select `Upload your code` and click `Upload`.
+
+image::codeUpload.png[]
+
+From the above page select `Local file` then click choose file. Once the file selector popup opens, navigate your your war's
+location and select the file. If you are using our initial project that location will be  `initial/build/libs`. Once you have
+selected your file click `Upload`, when it is done uploading you will be returned the 'Create a web app' page. Click the
+`Create application` button.
+
+After the button has been clicked it will take several minutes to deploy your new application. You will see a screen
+similar to the following.
+
+image::EBDeploy.png[]
+
+Once the deploy has completed you should see the status of your running application. If everything went as planned you will
+see something similar to the following.
+
+image::deployedAppHome.png[]
+
+From here you can redeploy using the `Upload and Deploy` button, change the version of Tomcat that is being used. Check your app
+logs and see monitoring and other app details. Also at the top of the page is the url which your app is running at, click it and
+visit your running app.
+
+image::runningDeployedApp.png[]
+
+TIP: If you have had issues and your app is not running properly, check the logs as sometimes your app may appear to be ok and have a
+green check-mark but when attempting to visit the site it wont resolve. Many times an issue may be uncovered when trying to
+resolve an problem by looking in the logs.
+
+Now that we have defeated the giant AWS and cut down the Elastic Beanstalk into simple easy to understand pieces lets take
+a moment to revel in our treasure of a Grails app fully deployed in the cloud!!! But let us not rest on our laurels just because
+we have managed to defeat the giant and successfully chopped down the beanstalk. In the next section we will look at setting up
+the Elastic Beanstalk CLI and being able to do everything we just accomplished using the UI with the terminal as well.

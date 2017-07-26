@@ -1,1 +1,22 @@
-AWS can take either zip files or WAR files. In our case we will go with a war.
+AWS can take either zip files or WAR files. In our case we will go with a WAR.
+
+[source,bash]
+----
+$ cd initial/
+----
+(or your project directory if you chose to create your own)
+
+Next execute the following ...
+
+[source,bash]
+----
+$ ./gradlew war
+----
+
+After the command completes you should see something similar to below.
+
+image::warBuild.png[]
+
+Once you have successfully generated your war file, you can find your newly generated file
+located at `initial/build/libs`. The war itself will be named something similar to
+`initial-0.1.war`.

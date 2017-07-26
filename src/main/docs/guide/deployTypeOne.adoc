@@ -1,6 +1,6 @@
 AWS is a complicated beast (in a good way), but for that reason we are going to start with
 the most basic deploy to Elastic Beanstalk. We will assume that you have already created
-your AWS account from this point forward.
+your AWS account from this point forward. Lets get chopping on that beanstalk.
 
 First thing make sure that you signed into your AWS account.
 

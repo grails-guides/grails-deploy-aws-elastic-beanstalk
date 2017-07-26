@@ -7,18 +7,10 @@ runningTheApp:
 deployTypeOne:
   title: Simple Web UI Deploy
   makeWar: Make War!
-#configuringTheApp:
-#  title: Configuring your Build
-#writingTheAppPartOne:
-#  title: Writing the Application Part 1
-#  creatingTheDomain: Creating the domain
-#  testingTheDomain: Testing our domain
-#writingTheAppPartTwo:
-#  title: Writing the Application Part 2
-#  creatingAppConfig: Additional App Config
-#  creatingTestData: Bootstrap Data
-#  creatingTheServices: Creating the service layer
-#  creatingTheControllers: Creating a controller
+  webDeploy: Deploying your application through the web interface
+deployTypeTwo:
+  title: App deploy from the command line
+  configEBCLI: Configure EB CLI
 #nextSteps:
 #  title: Next Steps
 helpWithGrails:

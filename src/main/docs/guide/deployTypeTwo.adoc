@@ -1,0 +1,16 @@
+For our next trip up the beanstalk we are going to retrieve the Goose that lays more advanced
+deployment eggs and are going to install the Aws Elastic Beanstalk CLI interface
+so that we can do deployment directly from our terminal. Start by returning to the
+Elastic Beanstalk home page by clicking `All Applications`.
+
+image::deployedAppHome2.png[]
+
+Once we have returned, on the left hand side there is a link for `Installing the AWS EB CLI`.
+
+image::installEBCLI.png[]
+
+At this point follow the Amazon instructions on how to install the AWS EB CLI found
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html?icmpid=docs_elasticbeanstalk_console[here]
+as all the details are beyond the scope of this guide.
+For OS specific instructions scroll to the bottom of the above page to find links to the
+necessary Amazon documentation. Once installation has been completed the guide will resume.
