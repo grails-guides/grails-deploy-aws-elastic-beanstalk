@@ -1,5 +1,5 @@
 In this guide we will show you how to defeat that giant in the clouds AWS by scaling its Elastic Beanstalk to
-retrieve the treasure of a deployed Grails 3 application.
+the reward of a deployed Grails 3 application.
 
 NOTE: Creating an AWS account requires a credit card. You can create a free account
 https://aws.amazon.com/[here] but a credit card is still required for verification.

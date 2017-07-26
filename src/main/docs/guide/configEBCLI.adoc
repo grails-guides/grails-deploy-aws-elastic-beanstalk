@@ -1,2 +1,92 @@
-Now that EB CLI is installed we need to configure it and our project in order to receive the
-benefits of being able to not leave the command line.
+Now that we have our AWS Keys and EB CLI is installed we need to configure it and our project in order to receive the
+benefits of being able to not leave the command line. Start by moving into your top level
+project directory.
+
+[source,bash]
+----
+$ cd initial/
+----
+
+Next run our first EB CLI command
+
+[source,bash]
+----
+$ eb init
+----
+
+First we need to select a region for our app to be deployed in, we suggest selecting the
+geographic region in which you live or which will be closest to your user base.
+
+image::ebInit.png[]
+
+Next if this is your first time using the EB CLI you will be asked to set up your AWS Keys
+that we created in the last section.
+
+image::savingAWSCredentials.png[]
+
+Once you have added your keys it will now ask you to create a new application. Give it a name
+of your choice, in our case we chose MyCLIApp.
+
+image::cliCreateNewApp.png[]
+
+Next it will ask you to select a deployment platform. Choose Tomcat.
+
+image::selectServer1.png[]
+
+Now that you have chosen your deployment platform it will ask which version.
+
+image::selectServer2.png[]
+
+Finally it will ask if you want to use SSH for your instances. Select Y and follow the instructions.
+
+image::useSSH.png[]
+
+For more info on `eb init` visit Amazons own documentation https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-configuration.html[here]
+
+We now have EB CLI setup but before we can deploy we still need to create a new environment
+for our application.
+
+[source,bash]
+----
+$ eb create
+----
+
+Give the app a name and DNS CNAME prefix (in our case we just chose the defaults). When asked to
+`Select a load balancer type` again we chose the default but please evaluate based on your
+application needs. Once those selections are complete, sit back and wait a few minutes till
+the environment has been fully created.
+
+image::createNewEBEnvironment.png[]
+
+If you wish to validate your specific deployment artifact you can check by viewing
+`initial/.elasticbeanstalk/config.yml`
+
+You should see
+
+[source,bash]
+----
+deploy:
+  artifact: /YOUR-PATH/initial/build/libs/complete-0.1.war
+----
+
+image::ebConfigYML.png[]
+
+Everything is now in place to deploy our app from the command line. From our top level
+project directory.
+
+[source,bash]
+----
+$ cd initial
+$ eb deploy MyCLIApp-dev
+----
+
+The above command is telling the EB CLI to deploy the app listed in the config.yml to the
+environment we just created.
+
+image::cliAppDeploy.png[]
+
+At this point return to your Elastic Beanstalk Dashboard to view the running instance and get the url of
+the successfully deployed application.
+
+We have defeated the giant AWS and cut down the Elastic Beanstalk into simple easy to understand pieces, lets take
+a moment to revel in our reward of a fully deployed Grails app in the cloud!!!

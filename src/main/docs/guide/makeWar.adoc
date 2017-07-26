@@ -1,4 +1,6 @@
-AWS can take either zip files or WAR files. In our case we will go with a WAR.
+With our AWS account created and knowing where to find the Elastic Beanstalk we can now begin exploring this
+platform in the clouds.
+AWS can take either zip or WAR files for deployment. In our case we will go with a WAR.
 
 [source,bash]
 ----

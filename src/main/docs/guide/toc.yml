@@ -5,13 +5,14 @@ gettingStarted:
 runningTheApp:
   title: Running the Application
 deployTypeOne:
-  title: Simple Web UI Deploy
+  title: Simple Web UI Deploy (First trip up the Beanstalk)
   makeWar: Make War!
   webDeploy: Deploying your application through the web interface
 deployTypeTwo:
-  title: App deploy from the command line
-  configEBCLI: Configure EB CLI
-#nextSteps:
-#  title: Next Steps
+  title: App deploy from the command line (Final trip up the Beanstalk)
+  awsKeys: Generate Keys for AWS
+  configEBCLI: Configure EB CLI and Deploy
+nextSteps:
+  title: Next Steps
 helpWithGrails:
   title: Do you need help with Grails?

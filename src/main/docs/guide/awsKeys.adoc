@@ -1,0 +1,40 @@
+In addition to installing the EB CLI you will also need to have AWS Access Keys in order to
+get everything working.
+
+WARNING: While your root account does have access keys it is highly suggested you do not use
+them and create a separate user account in order to generate new more secure keys.
+
+Amazon has wonderful documentation on how to do this https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html[here]
+but to make this easy and simple we will quickly cover how to do this. Start by visiting
+Amazons 'Identity and Access Management' https://console.aws.amazon.com/iam/home[dashboard] and click on `Users`.
+
+image::identyDashboard.png[]
+
+That will bring you to the Users screen where we can `Add user`.
+
+image::createUser.png[]
+
+We will now create a new user `Jack` and grant him `Programmatic access`.
+
+image::newUserDetails.png[]
+
+Now we will assign our new user permissions. Select `Attach existing policies directly` and
+select `AdministratorAccess`.
+
+NOTE: It is highly recommended that you rigorously evaluate what groups and policies to assign
+your users. We have kept this extremely basic and simple for our guide.
+
+image::userPermissions.png[]
+
+Review that everything is setup as you would like for you new user and click `Create user`.
+
+image::newUserReview.png[]
+
+Your new user should now be setup correctly and you can make note of both your keys as we
+will need them in the next section.
+
+image::successfulNewUser.png[]
+
+Fully created user view
+
+image::createdUserHome.png[]
