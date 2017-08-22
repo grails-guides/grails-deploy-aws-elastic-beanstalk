@@ -4,10 +4,14 @@ gettingStarted:
   howto: How to complete the guide
 runningTheApp:
   title: Running the Application
+dataSource:
+  title: Datasource Options
+  noDatasource: No Datasource Option
 deployTypeOne:
   title: Simple Web UI Deploy (First trip up the Beanstalk)
   makeWar: Make War!
   webDeploy: Deploying your application through the web interface
+  datasourceConfig: Configure Datasource (Optional)
 deployTypeTwo:
   title: App deploy from the command line (Final trip up the Beanstalk)
   awsKeys: Generate Keys for AWS

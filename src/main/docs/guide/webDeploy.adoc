@@ -47,6 +47,6 @@ TIP: If you have had issues and your app is not running properly, check the logs
 green check-mark but when attempting to visit the site it wont resolve. Many times an issue may be uncovered when trying to
 resolve an problem by looking in the logs.
 
-But wait there's more, in the next section we will look at setting up
-the Elastic Beanstalk CLI and being able to do everything we just accomplished using the UI
- with the terminal as well. Time to keep chopping...
+//But wait there's more, in the next section we will look at setting up
+//the Elastic Beanstalk CLI and being able to do everything we just accomplished using the UI
+// with the terminal as well. Time to keep chopping...

@@ -1,0 +1,71 @@
+Now for a more realistic deployment to Elastic Beanstalk. First we will go ahead and make the
+necessary modifications to our app. Just like if we wanted to run the app with no data source go
+ahead and remove the production environment block from `application.yml`. Next in the same directory
+as our `application.yml`, create an `application-production.groovy` file.
+
+Edit `grails-app/conf/application-production.groovy`: to look like the following
+
+[source, groovy]
+.grails-app/conf/application-production.groovy
+----
+include::{sourceDir}/grails-app/conf/application-production.groovy[]
+----
+
+You have probably noticed that we are making use of some environment variables, we will show you how to
+set those shortly. Once you have made the above changes you will need to `WAR` your application again <<makeWar>>.
+
+We will now go ahead and create a MySQL datasource using AWS RDS service. First navigate to RDS, located
+under Database.
+
+image::selectRDS.png[]
+
+Selecting RDS will bring you to the RDS Dashboard. Once at the dashboard go ahead and click on
+'Launch a DB Instance' to begin creating your new database.
+
+image::rdsDashboard.png[]
+
+The AWS RDS lets us quickly provision several different types of
+database for our application. In our case we will select MySQL and click select.
+
+image::dbSelect.png[]
+
+Now we will set the initial details of the database. For `DB Instance Class` select db.t2.micro, everything
+else can be left as default. Under settings create an identifier for your database along with a
+username and password.
+
+NOTE: The identifier is not the database name.
+
+image::dbDetails1.png[]
+
+Under 'Configure Advanced Settings` we again will leave everything as default other than we will specify
+our actual database name on this screen. We will call our database `myNewDB`.
+
+image::dbDetails2.png[]
+image::dbDetails3.png[]
+
+Click 'Launch DB Instance'; this will start the creation of your database and bring you to the following
+screen.
+
+image::dbReview.png[]
+
+From the above click on 'View Your DB Instances', this will bring you to your instance view screen.
+
+image::dbInstanceView.png[]
+
+Now that our database is setup it is time to connect it to our Elastic Beanstalk instance using our
+Environment Variables.
+
+Select configuration from the left hand menu.
+
+image::deployedAppHome2.png[]
+
+Select the gear on 'Software Configuration'
+
+image::appConfig.png[]
+
+Scroll to the bottom and add the following environment variables with your values.
+
+image::envVariables.png[]
+
+Once you have added the environment variables restart your application and it will pick up them up. To
+see this check your logs.
