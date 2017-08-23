@@ -1,14 +1,8 @@
 AWS is a complicated beast (in a good way), but for that reason we are going to start with
-the most basic deploy to Elastic Beanstalk. We will assume that you have already created
-your AWS account from this point forward. Lets get chopping on that beanstalk.
+the most basic deploy to Elastic Beanstalk. Once you have signed in to your account
+navigate to Elastic Beanstalk.
 
-First thing make sure that you signed into your AWS account.
-
-image::awsHome.png[]
-image::awsSignin.png[]
-image::awsDashboard.png[]
-
-Once signed in navigate to Elastic Beanstalk.
+NOTE: We do not require a datasource be configured for this deploy. See <<noDatasource>>
 
 image::findEB.png[]
 image::EBHome.png[]

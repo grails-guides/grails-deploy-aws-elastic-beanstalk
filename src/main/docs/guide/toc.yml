@@ -4,16 +4,19 @@ gettingStarted:
   howto: How to complete the guide
 runningTheApp:
   title: Running the Application
+awsSignup:
+  title: Signup for AWS
 dataSource:
   title: Datasource Options
   noDatasource: No Datasource Option
 deployTypeOne:
-  title: Simple Web UI Deploy (First trip up the Beanstalk)
+  title: Simple Web UI Deploy (Quick)
   makeWar: Make War!
   webDeploy: Deploying your application through the web interface
-  datasourceConfig: Configure Datasource (Optional)
+ebInlineDatasource:
+  title: Configure Datasource using Elastic Beanstalk
 deployTypeTwo:
-  title: App deploy from the command line (Final trip up the Beanstalk)
+  title: App deploy from the command line
   awsKeys: Generate Keys for AWS
   configEBCLI: Configure EB CLI and Deploy
 nextSteps:

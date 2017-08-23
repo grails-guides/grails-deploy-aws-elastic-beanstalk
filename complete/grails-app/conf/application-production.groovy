@@ -1,18 +1,17 @@
+// These will be displayed in the log file.
 String dbName = System.getProperty("RDS_DB_NAME")
-String userName = System.getProperty("RDS_USERNAME")
-String password = System.getProperty("RDS_PASSWORD")
+String user = System.getProperty("RDS_USERNAME")
+String pass = System.getProperty("RDS_PASSWORD")
 String hostname = System.getProperty("RDS_HOSTNAME")
 String port = System.getProperty("RDS_PORT")
-
-println "PRODUCTION CONFIG AWS EB Deploy"
-println dbName + ' ' + userName + ' ' + password + ' ' + hostname + ' ' + port
 
 dataSources {
     dataSource {
         driverClassName = "com.mysql.jdbc.Driver"
         dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
-        username = userName
-        password = password
+        username = user
+        password = pass
+        dbCreate = "create-drop"  // Will recreate database every time on startup.
         url = "jdbc:mysql://" + hostname + ':' + port + '/' + dbName
         properties {
             jmxEnabled = true

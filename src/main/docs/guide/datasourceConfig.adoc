@@ -1,4 +1,6 @@
-Now for a more realistic deployment to Elastic Beanstalk. First we will go ahead and make the
+Now for a more realistic deployment to Elastic Beanstalk. In this case we will set the datasource up
+from inside Elastic Beanstalk. This approach is best for dev and testing as it is quick and fairly
+painless but not the most flexible later on. First we will go ahead and make the
 necessary modifications to our app. Just like if we wanted to run the app with no data source go
 ahead and remove the production environment block from `application.yml`. Next in the same directory
 as our `application.yml`, create an `application-production.groovy` file.

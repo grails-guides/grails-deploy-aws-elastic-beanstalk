@@ -4,3 +4,6 @@ next steps ...
 
 - Read AWS Elastic Beanstalk Developers Guide https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html[here]
 - Further familiarize yourself with the EB CLI https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3.html[here]
+- Configure production level database through RDS instead of Elastic Beanstalk https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.RDS.html[here]
+
+NOTE: Configuring RDS will require you to set Environment variables.
