@@ -1,6 +1,5 @@
 First thing make sure that you signed into your AWS account. If you have not made an account previously,
 do so now as we will assume that you have already created an AWS account from this point forward.
 
-image::awsHome.png[]
 image::awsSignin.png[]
-image::awsDashboard.png[]
+image::awsHome.png[]

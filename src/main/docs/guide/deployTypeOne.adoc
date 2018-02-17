@@ -4,5 +4,5 @@ navigate to Elastic Beanstalk.
 
 NOTE: We do not require a datasource be configured for this deploy. See <<noDatasource>>
 
-image::findEB.png[]
-image::EBHome.png[]
+image::selectElasticBeanstalk.png[]
+image::EBHomeGetStarted.png[]

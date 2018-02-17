@@ -1,31 +1,30 @@
 Now that we have a war file ready to deploy lets return to climbing that beanstalk!
 
-First click on the `Get started` button on the Elastic Beanstalk home page.
+From the Elastic Beanstalk home page, first we need to select our platform
 
 image::EBHomeGetStarted.png[]
 
-This will bring us to the 'Create a web app' page
+Select tomcat
 
-image::createEBApp.png[]
 
-Now we will fill in the details of our app. Set the Application Name to a name of your choice (in our case MyApp) then set
-the Environment name, again whatever you would like is fine (we used Example). Next set your domain, you can allow it to
-use fully generated names but for simplicity we used My-App.
+image::selectTomcat.png[]
 
-NOTE: Make sure to `Check availability` for the domain you wish to use.
+Then click `Launch Now` button on the Elastic Beanstalk home page.
 
-Following setting the domain select Tomcat as your `Platform`.
+image::tomcatLaunch.png[]
 
-image::createEBAppDetails.png[]
 
-Once you have all the basic configuration set up select `Upload your code` and click `Upload`.
+After a few minutes of setup, this will bring us to our Tomcat dashboard.
+
+image::tomcatSuccess.png[]
+
+Now that your environment is created, click on "Upload and Deploy" to upload your code.
 
 image::codeUpload.png[]
 
-From the above page select `Local file` then click choose file. Once the file selector popup opens, navigate your your war's
-location and select the file. If you are using our initial project that location will be  `initial/build/libs`. Once you have
-selected your file click `Upload`, when it is done uploading you will be returned the 'Create a web app' page. Click the
-`Create application` button.
+From the above page click choose file. Once the file selector popup opens, navigate your your war's
+location and select the file. If you are using our initial project that location will be  `initial/build/libs`. Once you
+have selected your file click `Deploy`.
 
 After the button has been clicked it will take several minutes to deploy your new application. You will see a screen
 similar to the following.

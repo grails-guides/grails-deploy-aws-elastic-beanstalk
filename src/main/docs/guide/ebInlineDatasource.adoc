@@ -1,7 +1,11 @@
 Now for a more realistic deployment to Elastic Beanstalk. In this case we will set the datasource up
 from inside Elastic Beanstalk. This approach is best for dev and testing as it is quick and fairly
 painless but not the most flexible later on. First we will go ahead and make the
-necessary modifications to our app. Just like if we wanted to run the app with no data source go
+necessary modifications to our app.
+
+NOTE: This assumes a new deploy from scratch.
+
+Just like if we wanted to run the app with no data source go
 ahead and remove the production environment block from `application.yml`. Next in the same directory
 as our `application.yml`, create an `application-production.groovy` file.
 
@@ -15,60 +19,40 @@ include::{sourceDir}/grails-app/conf/application-production.groovy[]
 
 You have probably noticed that we are making use of some environment variables; creating the database
 through Elastic Beanstalk automatically creates these for you but we will show you where they are set
-as you will need to manually do it if you create you database outside of Elastic Beanstalk.
+as you will need to manually do it, if you create you database outside of Elastic Beanstalk.
 Once you have made the above changes you will need to `WAR` your application
  again <<makeWar>>.
 
 When creating the datasource through elastic beanstalk you can create it at the time you are standing
 up your application or after. In our case we will creating while creating our new application.
 
-First click on the `Get started` button on the Elastic Beanstalk home page.
+Make sure you select `Tomcat` and then click on the `Launch Now` button on the Elastic Beanstalk home page.
 
-image::EBHomeGetStarted.png[]
+image::tomcatLaunch.png[]
 
-This will bring us to the 'Create a web app' page
+After a few minutes of setup, this will bring us to our Tomcat dashboard.
 
-image::createEBApp.png[]
+image::tomcatSuccess.png[]
 
-Now we will fill in the details of our app. Set the Application Name to a name of your choice (in our case MyApp) then set
-the Environment name, again whatever you would like is fine (we used Example). Next set your domain, you can allow it to
-use fully generated names but for simplicity we used My-App.
+At this point select `Configuration` from the left side menu. Once on the configuration screen, go to the bottom and
+select `create a new RDS database`.
 
-NOTE: Make sure to `Check availability` for the domain you wish to use.
+image::config1.png[]
+image::config2.png[]
 
-Following setting the domain select Tomcat as your `Platform`.
+Once on the create database page just select the defaults and enter a user name `admin` and click apply.
 
-image::createEBAppDetails.png[]
+image::createDB.png[]
 
-Once you have all the basic configuration set up select `Upload your code` and click `Upload`.
+Creating a database will take about 10 minutes so while your waiting you can review the documentation on how to access
+the environment variables
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.managing.db.html?icmpid=docs_elasticbeanstalk_console[here].
+
+Once you have all the basic configuration set up select `Upload and Deploy` and click `Upload`.
 
 image::codeUpload.png[]
 
-Now click on the `Configure more options' button.
 
-image::createEBAppDetailsMoreOptions.png[]
-
-You will now see all the additional options that could be configured but we are only interested in a
-database. Scroll to the bottom where you see the `Database` box and click `Modify`.
-
-NOTE: This is one of the locations you can set the Environment Variables. In the `Software` box click
-modify and scroll to the bottom where it says Environment properties.
-
-image::moreOptions1.png[]
-image::moreOptions2.png[]
-
-Go ahead and create a database with the following settings and assign it a username and password.
-
-TIP: Make sure to note your username and password.
-
-image::databaseConfig.png[]
-
-Click save, review your database settings and select `Create environment`.
-
-image::reviewDB.png[]
-
-After the button has been clicked it will take several minutes to deploy your new application. You will see a screen
-similar to the following.
 
 image::EBDeploy.png[]
 

@@ -1,5 +1,5 @@
 If you want to choose the no datasource option just to see your war running on Elastic Beanstalk, first
-make sure your test app does not actually require a datasource, then removed the production datasource
+make sure your test app does not actually require a datasource and removed the production datasource
 block from `application.yml`.
 
 NOTE: Our test app does not require a datasource.
