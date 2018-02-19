@@ -1,8 +1,8 @@
+NOTE: This uses the default datasource. See <<defaultDatasource>>
+
 AWS is a complicated beast (in a good way), but for that reason we are going to start with
 the most basic deploy to Elastic Beanstalk. Once you have signed in to your account
 navigate to Elastic Beanstalk.
-
-NOTE: We do not require a datasource be configured for this deploy. See <<noDatasource>>
 
 image::selectElasticBeanstalk.png[]
 image::EBHomeGetStarted.png[]

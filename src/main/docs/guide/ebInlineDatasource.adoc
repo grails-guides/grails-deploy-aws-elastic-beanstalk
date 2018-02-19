@@ -5,16 +5,27 @@ necessary modifications to our app.
 
 NOTE: This assumes a new deploy from scratch.
 
-Just like if we wanted to run the app with no data source go
-ahead and remove the production environment block from `application.yml`. Next in the same directory
-as our `application.yml`, create an `application-production.groovy` file.
+We need to add a dependency to our `gradle.build` so our app can support a new database as well as tell gradle how to get
+the injected properties
 
-Edit `grails-app/conf/application-production.groovy`: to look like the following
-
-[source, groovy]
-.grails-app/conf/application-production.groovy
+[source,groovy]
+.build.gradle
 ----
-include::{sourceDir}/grails-app/conf/application-production.groovy[]
+include::{sourceDir}/build.gradle[indent=0, tag=dbDependency]
+----
+
+[source,groovy]
+.build.gradle
+----
+include::{sourceDir}/build.gradle[indent=0, tag=getEnv]
+----
+
+Now go ahead and make a minor adjustment to your `application.yml` in the production block so it looks like the following.
+
+[source,yml]
+.grails-app/conf/application.yml
+----
+include::{sourceDir}/grails-app/conf/application.yml[indent=0, tag=envDatasources]
 ----
 
 You have probably noticed that we are making use of some environment variables; creating the database
@@ -23,8 +34,7 @@ as you will need to manually do it, if you create you database outside of Elasti
 Once you have made the above changes you will need to `WAR` your application
  again <<makeWar>>.
 
-When creating the datasource through elastic beanstalk you can create it at the time you are standing
-up your application or after. In our case we will creating while creating our new application.
+When creating the datasource through elastic beanstalk you can create it right after your new instance finishes initializing.
 
 Make sure you select `Tomcat` and then click on the `Launch Now` button on the Elastic Beanstalk home page.
 
@@ -61,7 +71,7 @@ see something similar to the following.
 
 image::deployedAppHome.png[]
 
-Now with the app now deployed if you needed to make edits to your environment variables select
+Now with the app deployed if you needed to make edits to your environment variables select
 `Configuration` from the left hand menu, then click the gear on `Software Configuration`.
 
 image::configDetails.png[]
@@ -69,4 +79,3 @@ image::configDetails.png[]
 After clicking the gear scroll to the bottom of the page to set environment properties.
 
 image::envProps.png[]
-

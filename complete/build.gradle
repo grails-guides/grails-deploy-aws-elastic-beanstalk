@@ -47,6 +47,9 @@ dependencies {
     profile "org.grails.profiles:web"
     runtime "org.glassfish.web:el-impl:2.1.2-b03"
     runtime "com.h2database:h2"
+    //tag::dbDependency[]
+    runtime 'mysql:mysql-connector-java'
+    //end::dbDependency[]
     runtime "org.apache.tomcat:tomcat-jdbc"
     runtime "com.bertramlabs.plugins:asset-pipeline-grails:2.14.2"
     testCompile "org.grails:grails-gorm-testing-support"
@@ -55,6 +58,16 @@ dependencies {
     testRuntime "org.seleniumhq.selenium:selenium-htmlunit-driver:2.47.1"
     testRuntime "net.sourceforge.htmlunit:htmlunit:2.18"
 }
+
+//tag::getEnv[]
+tasks.withType(org.springframework.boot.gradle.run.BootRunTask) {
+    systemProperty('RDS_DB_NAME', 'dbName')
+    systemProperty('RDS_USERNAME', 'user')
+    systemProperty('RDS_PASSWORD', 'pass')
+    systemProperty('RDS_HOSTNAME', 'hostname')
+    systemProperty('RDS_PORT', 'port')
+}
+//end::getEnv[]
 
 bootRun {
     jvmArgs('-Dspring.output.ansi.enabled=always')
@@ -66,3 +79,9 @@ assets {
     minifyJs = true
     minifyCss = true
 }
+
+//String dbName = System.getProperty("RDS_DB_NAME")
+//String user = System.getProperty("RDS_USERNAME")
+//String pass = System.getProperty("RDS_PASSWORD")
+//String hostname = System.getProperty("RDS_HOSTNAME")
+//String port = System.getProperty("RDS_PORT")

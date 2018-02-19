@@ -1,10 +1,10 @@
 At this point we have a couple of options to discuss before we get to our actual deployment.
 
-- Deploy an app with no datasource to quickly see how Elastic Beanstalk works. (Quick) <<deployTypeOne>>
+- Deploy an app with default datasource (H2) to quickly see how Elastic Beanstalk works. (Quick) <<deployTypeOne>>
 - Configure a datasource from inside Elastic Beanstalk (Good for Dev) <<datasourceConfig>>
 - Configure a external datasource from AWS RDS (Production)
 
 
-TIP: All data source config options will require the you to edit `application.yml` as in section <<noDatasource>>
+TIP: Data source config options may require you to edit `application.yml`
 
 //for a more production like deployment. (We will do this in the <<datasourceConfig>> section)

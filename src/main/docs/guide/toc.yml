@@ -8,7 +8,7 @@ awsSignup:
   title: Signup for AWS
 dataSource:
   title: Datasource Options
-  noDatasource: No Datasource Option
+  defaultDatasource: Default Datasource Option
 deployTypeOne:
   title: Simple Web UI Deploy (Quick)
   makeWar: Make War!
