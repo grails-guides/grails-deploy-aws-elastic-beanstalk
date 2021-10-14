@@ -7,6 +7,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java: ['8']
+    env:
+      JDK_VERSION:  ${{ matrix.java }}
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 8
